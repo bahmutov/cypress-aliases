@@ -38,3 +38,15 @@ it('cy.request METHOD URL', () => {
       title: 'Post 2',
     })
 })
+
+it('cy.request options object', () => {
+  cy.wrap(2).as('postId')
+  cy.request({
+    url: 'https://my-json-server.typicode.com/typicode/demo/posts/@postId',
+  })
+    .its('body')
+    .should('deep.equal', {
+      id: 2,
+      title: 'Post 2',
+    })
+})
