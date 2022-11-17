@@ -28,6 +28,7 @@ Alternatively, you can import the individual source files to overwrite the comma
 import 'cypress-aliases/commands/should'
 import 'cypress-aliases/commands/contains'
 import 'cypress-aliases/commands/wrap'
+import 'cypress-aliases/commands/request'
 ```
 
 ## API
@@ -77,6 +78,19 @@ Note: if you simply want to look up a single aliased value, use [cy.get](https:/
 cy.wrap(42).as('n')
 cy.get('@n').should('equal', 42)
 ```
+
+### request
+
+Overwrites the [cy.request](https://on.cypress.io/request) command to change the URL using any included aliases
+
+```js
+cy.wrap('posts').as('resource')
+cy.wrap(2).as('postId')
+// makes the request to /api/posts/2
+cy.request('/api/@resource/@postId')
+```
+
+See [cypress/e2e/request.cy.js](./cypress/e2e/request.cy.js) spec file.
 
 ## Small print
 
