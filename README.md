@@ -47,9 +47,6 @@ See [cypress/e2e/should.cy.js](./cypress/e2e/should.cy.js) spec file
 Overwrites the [cy.contains](https://on.cypress.io/contains) command to automatically substitute the resolved aliased values into the text you are looking for.
 
 ```html
-
-```
-
 <div id="number">42</div>
 <p>Hello there <span class="name">Cy</span></p>
 ```
