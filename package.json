@@ -1,17 +1,19 @@
 {
   "name": "cypress-aliases",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "description": "A plugin that makes working with Cypress aliases much simpler",
   "main": "commands/index.js",
   "scripts": {
-    "test": "cypress run"
+    "test": "cypress run",
+    "semantic-release": "semantic-release",
+    "badges": "npx -p dependency-version-badge update-badge cypress"
   },
   "files": [
     "commands"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bahmutov/cypress-aliases.git"
+    "url": "https://github.com/bahmutov/cypress-aliases.git"
   },
   "keywords": [
     "cypress-plugin"
@@ -24,6 +26,7 @@
   "homepage": "https://github.com/bahmutov/cypress-aliases#readme",
   "devDependencies": {
     "cypress": "^11.1.0",
-    "prettier": "^2.7.1"
+    "prettier": "^2.7.1",
+    "semantic-release": "^19.0.5"
   }
 }
