@@ -1,1 +1,2 @@
 import './should'
+import './contains'

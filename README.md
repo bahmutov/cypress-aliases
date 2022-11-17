@@ -26,7 +26,40 @@ Alternatively, you can import the individual source files to overwrite the comma
 
 ```js
 import 'cypress-aliases/commands/should'
+import 'cypress-aliases/commands/contains'
 ```
+
+## API
+
+### should
+
+Allows you to use aliased values in the `.should(...)` [implicit assertions](https://glebbahmutov.com/cypress-examples/commands/assertions.html).
+
+```js
+cy.wrap(42).as('answer')
+cy.wrap(20 + 22).should('equal', '@answer')
+```
+
+See [cypress/e2e/should.cy.js](./cypress/e2e/should.cy.js) spec file
+
+### contains
+
+Overwrites the [cy.contains](https://on.cypress.io/contains) command to automatically substitute the resolved aliased values into the text you are looking for.
+
+```html
+
+```
+
+<div id="number">42</div>
+<p>Hello there <span class="name">Cy</span></p>
+```
+
+```js
+cy.wrap('Cy').as('name')
+cy.contains('p', 'Hello there @name')
+```
+
+See [cypress/e2e/contains.cy.js](./cypress/e2e/contains.cy.js) spec file
 
 ## Small print
 
