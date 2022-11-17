@@ -50,3 +50,10 @@ it('cy.request options object', () => {
       title: 'Post 2',
     })
 })
+
+it('posts an object', () => {
+  const api = 'http://localhost:3000'
+  cy.request('POST', `${api}/reset`, { todos: [] })
+  cy.request('POST', `${api}/todos`, { title: 'test todo' })
+  cy.request(`${api}/todos`).its('body').should('have.length', 1)
+})
