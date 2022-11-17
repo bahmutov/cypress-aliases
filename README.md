@@ -27,6 +27,7 @@ Alternatively, you can import the individual source files to overwrite the comma
 ```js
 import 'cypress-aliases/commands/should'
 import 'cypress-aliases/commands/contains'
+import 'cypress-aliases/commands/wrap'
 ```
 
 ## API
@@ -57,6 +58,25 @@ cy.contains('p', 'Hello there @name')
 ```
 
 See [cypress/e2e/contains.cy.js](./cypress/e2e/contains.cy.js) spec file
+
+### wrap
+
+Overwrites the [cy.wrap](https://on.cypress.io/wrap) command and resolves all words that start with `@`
+
+```js
+cy.wrap('Hello').as('greeting')
+cy.wrap('world').as('name')
+cy.wrap('@greeting there @name').should('equal', 'Hello there world')
+```
+
+See [cypress/e2e/wrap.cy.js](./cypress/e2e/wrap.cy.js) spec file.
+
+Note: if you simply want to look up a single aliased value, use [cy.get](https://on.cypress.io/get) instead
+
+```js
+cy.wrap(42).as('n')
+cy.get('@n').should('equal', 42)
+```
 
 ## Small print
 
