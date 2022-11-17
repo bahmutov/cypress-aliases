@@ -57,3 +57,19 @@ it('posts an object', () => {
   cy.request('POST', `${api}/todos`, { title: 'test todo' })
   cy.request(`${api}/todos`).its('body').should('have.length', 1)
 })
+
+it('updates an object', () => {
+  const api = 'http://localhost:3000'
+  cy.request('POST', `${api}/todos`, { title: 'test todo' })
+    .its('body.id')
+    .should('be.a', 'number')
+    .as('id')
+  cy.request(`${api}/todos/@id`)
+    .its('body')
+    .should('deep.include', { title: 'test todo' })
+  cy.request('PATCH', `${api}/todos/@id`, { completed: true })
+  cy.request(`${api}/todos/@id`)
+    .its('body')
+    .should('deep.include', { title: 'test todo', completed: true })
+  cy.request('DELETE', `${api}/todos/@id`)
+})
