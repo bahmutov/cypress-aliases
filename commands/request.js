@@ -10,23 +10,33 @@ function resolveInUrl(url) {
   return url
 }
 
-Cypress.Commands.overwrite('request', (request, method, url) => {
-  if (typeof method === 'object') {
-    const options = method
-    if (options.url) {
-      options.url = resolveInUrl(options.url)
+Cypress.Commands.overwrite('request', function (request, method, url, body) {
+  // console.log({
+  //   n: arguments.length,
+  //   method,
+  //   url,
+  //   body,
+  // })
+  if (arguments.length === 2) {
+    if (typeof method === 'object') {
+      const options = method
+      if (options.url) {
+        options.url = resolveInUrl(options.url)
+      }
+      return request(options)
+    } else if (typeof method === 'string') {
+      url = method
+      url = resolveInUrl(url)
+      return request(url)
     }
-    return request(options)
-  } else if (typeof url === 'undefined') {
-    url = method
-    // @ts-ignore
-    method = 'GET'
-  }
-
-  if (typeof url === 'string') {
+  } else if (arguments.length === 3) {
     url = resolveInUrl(url)
     // @ts-ignore
     return request(method, url)
+  } else if (arguments.length === 4) {
+    url = resolveInUrl(url)
+    // @ts-ignore
+    return request(method, url, body)
   }
 
   // @ts-ignore
