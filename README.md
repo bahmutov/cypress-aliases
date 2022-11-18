@@ -2,6 +2,8 @@
 
 > A plugin that makes working with Cypress aliases much simpler
 
+- 🎓 This plugin is covered by my course [Cypress Plugins](https://cypress.tips/courses/cypress-plugins)
+
 ## Install
 
 Add this plugin as a dev dependency to your project
