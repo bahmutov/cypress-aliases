@@ -40,5 +40,5 @@ Cypress.Commands.overwrite('request', function (request, method, url, body) {
   }
 
   // @ts-ignore
-  return request(method, url)
+  return request(method, url, body)
 })
