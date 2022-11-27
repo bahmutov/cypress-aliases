@@ -4,6 +4,7 @@ beforeEach(() => {
   Cypress._.toPairs(keepAliases).forEach(([aliasName, value]) => {
     // console.log('restoring alias %s', aliasName)
     cy.wrap(value, { log: false }).as(aliasName)
+    cy.log(`restored alias **${aliasName}**`)
   })
 })
 
