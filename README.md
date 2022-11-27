@@ -31,6 +31,7 @@ import 'cypress-aliases/commands/should'
 import 'cypress-aliases/commands/contains'
 import 'cypress-aliases/commands/wrap'
 import 'cypress-aliases/commands/request'
+import 'cypress-aliases/commands/as'
 ```
 
 ## API
@@ -93,6 +94,10 @@ cy.request('/api/@resource/@postId')
 ```
 
 See [cypress/e2e/request.cy.js](./cypress/e2e/request.cy.js) spec file.
+
+### as
+
+Every registered Cypress alias is removed before every test. Thus one needs to recreate the aliases before each test. This module overwrites the [cy.as](https://on.cypress.io/as) command to add `keep: true` option. The kept aliases are restored automatically before each test.
 
 ## Small print
 
