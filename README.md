@@ -99,6 +99,24 @@ See [cypress/e2e/request.cy.js](./cypress/e2e/request.cy.js) spec file.
 
 Every registered Cypress alias is removed before every test. Thus one needs to recreate the aliases before each test. This module overwrites the [cy.as](https://on.cypress.io/as) command to add `keep: true` option. The kept aliases are restored automatically before each test.
 
+```js
+before(() => {
+  cy.request('POST', '/items')
+    .its('body.id')
+    // preserve the alias and restore
+    // it before every future test
+    .as('id', { keep: true })
+})
+
+it('has the item alias', () => {
+  cy.get('@id')
+})
+
+it('still has the item alias', () => {
+  cy.get('@id')
+})
+```
+
 ## Small print
 
 Author: Gleb Bahmutov &lt;gleb.bahmutov@gmail.com&gt; &copy; 2022
