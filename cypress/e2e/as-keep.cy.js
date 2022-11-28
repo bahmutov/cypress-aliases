@@ -1,3 +1,5 @@
+// @ts-check
+/// <reference path="../../commands/index.d.ts" />
 import '../../commands/as'
 
 before(() => {

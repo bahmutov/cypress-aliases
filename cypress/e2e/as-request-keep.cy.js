@@ -1,3 +1,6 @@
+// @ts-check
+/// <reference path="../../commands/index.d.ts" />
+
 import '../../commands/request'
 import '../../commands/as'
 
