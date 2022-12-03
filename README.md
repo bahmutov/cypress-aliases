@@ -32,6 +32,7 @@ import 'cypress-aliases/commands/contains'
 import 'cypress-aliases/commands/wrap'
 import 'cypress-aliases/commands/request'
 import 'cypress-aliases/commands/as'
+import 'cypress-aliases/commands/type'
 ```
 
 ## API
