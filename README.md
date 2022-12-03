@@ -63,6 +63,18 @@ cy.contains('p', 'Hello there @name')
 
 See [cypress/e2e/contains.cy.js](./cypress/e2e/contains.cy.js) spec file
 
+## type
+
+You can type the aliased current value, either by itself or as part of a longer string
+
+```js
+cy.wrap('hello').as('greeting')
+cy.get('#memo').type('@greeting world!')
+cy.get('#memo').should('have.value', 'hello world!')
+```
+
+See [cypress/e2e/type.cy.js](./cypress/e2e/type.cy.js)
+
 ### wrap
 
 Overwrites the [cy.wrap](https://on.cypress.io/wrap) command and resolves all words that start with `@`
