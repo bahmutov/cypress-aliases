@@ -8,7 +8,7 @@
     "test": "cypress run",
     "semantic-release": "semantic-release",
     "badges": "npx -p dependency-version-badge update-badge cypress",
-    "start": "json-server cypress/data.json --middlewares ./node_modules/json-server-reset",
+    "start": "json-server --host 127.0.0.1 cypress/data.json --middlewares ./node_modules/json-server-reset",
     "dev": "start-test 3000 cy:open",
     "cy:open": "cypress open"
   },
@@ -34,7 +34,7 @@
     "json-server-reset": "1.6.0",
     "prettier": "^2.7.1",
     "semantic-release": "^20.1.1",
-    "start-server-and-test": "^1.14.0"
+    "start-server-and-test": "^2.0.0"
   },
   "peerDependencies": {
     "cypress": ">=12"

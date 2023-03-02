@@ -10,6 +10,9 @@ jobs:
       - name: Print node version
         run: node -v
 
+      - name: Check production dependencies
+        run: npm audit --report --omit dev
+
       - name: Run Cypress tests 🧪
         # https://github.com/cypress-io/github-action
         uses: cypress-io/github-action@v5
