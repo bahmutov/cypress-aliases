@@ -2,7 +2,7 @@ const keepAliases = {}
 
 beforeEach(() => {
   Cypress._.toPairs(keepAliases).forEach(([aliasName, value]) => {
-    console.log('restoring alias %s', aliasName)
+    // console.log('restoring alias %s', aliasName)
     cy.wrap(value, { log: false }).as(aliasName)
     cy.log(`restored alias **${aliasName}**`)
   })
@@ -40,7 +40,7 @@ Cypress.Commands.overwriteQuery('as', function (as, alias, options = {}) {
       return subject
     }
     alreadyDone = true
-    console.log('as', subject, alias, options)
+    // console.log('as', subject, alias, options)
     if (options && options.keep === true) {
       keepAliases[alias] = subject
     }
