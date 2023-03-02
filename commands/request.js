@@ -5,7 +5,7 @@ const { getAliasSubject } = require('./utils')
 function resolveInUrl(url) {
   // @ts-ignore
   const aliases = cy.state('aliases')
-  console.log(aliases)
+  // console.log(aliases)
   Cypress._.forEach(aliases, (alias, key) => {
     // @ts-ignore
     url = url.replaceAll('@' + key, getAliasSubject(aliases[key]))
