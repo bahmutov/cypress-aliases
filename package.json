@@ -30,7 +30,7 @@
   "homepage": "https://github.com/bahmutov/cypress-aliases#readme",
   "devDependencies": {
     "cypress": "^11.1.0",
-    "json-server": "0.17.1",
+    "json-server": "0.17.2",
     "json-server-reset": "1.6.0",
     "prettier": "^2.7.1",
     "semantic-release": "^20.1.1",
