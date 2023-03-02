@@ -1,6 +1,6 @@
 import '../../commands/contains'
 
-before(() => {
+beforeEach(() => {
   const html = `
     <body>
       <div id="number">42</div>

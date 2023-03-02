@@ -14,6 +14,13 @@ $ npm i -D cypress-aliases
 $ yarn add -D cypress-aliases
 ```
 
+### Cypress version support
+
+| cypress-aliases | Cypress |
+| --------------- | ------- |
+| v1              | < v12   |
+| v2              | >= v12  |
+
 ## Use
 
 You can include all overwritten commands from this plugin by importing just the plugin from your spec or support file:

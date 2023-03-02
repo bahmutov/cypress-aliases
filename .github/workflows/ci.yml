@@ -7,12 +7,19 @@ jobs:
       - name: Checkout 🛎
         uses: actions/checkout@v3
 
+      - name: Print node version
+        run: node -v
+
+      - name: Check production dependencies
+        run: npm audit --report --omit dev
+
       - name: Run Cypress tests 🧪
         # https://github.com/cypress-io/github-action
         uses: cypress-io/github-action@v5
         with:
           start: 'npm start'
-          wait-on: 'http://localhost:3000'
+          wait-on: 'http://127.0.0.1:3000'
+          wait-on-timeout: 30
 
   release:
     needs: [test]

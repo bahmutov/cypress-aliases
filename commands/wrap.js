@@ -1,5 +1,7 @@
 // @ts-check
 
+const { getAliasSubject } = require('./utils')
+
 // automatically replace any string values that start with "@"
 // with the aliased value, if it exists
 Cypress.Commands.overwrite('wrap', (wrap, value) => {
@@ -16,7 +18,7 @@ Cypress.Commands.overwrite('wrap', (wrap, value) => {
       if (typeof a === 'string' && a[0] === '@') {
         const key = a.slice(1)
         if (key in aliases) {
-          return aliases[key].subject
+          return getAliasSubject(aliases[key])
         }
       }
       return a

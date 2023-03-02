@@ -1,11 +1,14 @@
 // @ts-check
 
+const { getAliasSubject } = require('./utils')
+
 function resolveInUrl(url) {
   // @ts-ignore
   const aliases = cy.state('aliases')
+  // console.log(aliases)
   Cypress._.forEach(aliases, (alias, key) => {
     // @ts-ignore
-    url = url.replaceAll('@' + key, aliases[key].subject)
+    url = url.replaceAll('@' + key, getAliasSubject(aliases[key]))
   })
   return url
 }
@@ -17,6 +20,8 @@ Cypress.Commands.overwrite('request', function (request, method, url, body) {
   //   url,
   //   body,
   // })
+  // debugger
+
   if (arguments.length === 2) {
     if (typeof method === 'object') {
       const options = method
