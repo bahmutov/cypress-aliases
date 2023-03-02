@@ -1,3 +1,4 @@
+// @ts-check
 import '../../commands/wrap'
 
 it('replaces the aliased values inside cy.wrap', () => {

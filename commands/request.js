@@ -1,16 +1,6 @@
 // @ts-check
 
-function getAliasSubject(aliasObject) {
-  if ('subject' in aliasObject) {
-    return aliasObject.subject
-  }
-  if (Array.isArray(aliasObject.subjectChain)) {
-    return aliasObject.subjectChain[0]
-  }
-  throw new Error(
-    `Do not know how to get the subject for alias ${aliasObject.alias}`,
-  )
-}
+const { getAliasSubject } = require('./utils')
 
 function resolveInUrl(url) {
   // @ts-ignore
