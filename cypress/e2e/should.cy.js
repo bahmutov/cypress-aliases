@@ -1,3 +1,4 @@
+// @ts-check
 import '../../commands/should'
 
 it('replaces the aliases value', () => {
