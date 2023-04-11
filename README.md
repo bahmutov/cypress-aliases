@@ -3,6 +3,10 @@
 > A plugin that makes working with Cypress aliases much simpler
 
 - 🎓 This plugin is covered by my course [Cypress Plugins](https://cypress.tips/courses/cypress-plugins)
+  - [Lesson g2: Simplify assertions using the alias syntax](https://cypress.tips/courses/cypress-plugins/lessons/g2)
+  - [Lesson g3: Check the text on the page using an alias access](https://cypress.tips/courses/cypress-plugins/lessons/g3)
+  - [Lesson g4: Use resolved aliases to make API requests](https://cypress.tips/courses/cypress-plugins/lessons/g4)
+  - [Lesson g5: Reuse the alias shortcut created in before hook](https://cypress.tips/courses/cypress-plugins/lessons/g5)
 
 ## Install
 
