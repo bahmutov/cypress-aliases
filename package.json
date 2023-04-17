@@ -30,7 +30,7 @@
   },
   "homepage": "https://github.com/bahmutov/cypress-aliases#readme",
   "devDependencies": {
-    "cypress": "12.9.0",
+    "cypress": "12.10.0",
     "json-server": "0.17.3",
     "json-server-reset": "1.6.0",
     "prettier": "^2.7.1",
