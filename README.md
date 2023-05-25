@@ -1,4 +1,4 @@
-# cypress-aliases ![cypress version](https://img.shields.io/badge/cypress-12.12.0-brightgreen)
+# cypress-aliases ![cypress version](https://img.shields.io/badge/cypress-12.13.0-brightgreen)
 
 > A plugin that makes working with Cypress aliases much simpler
 
