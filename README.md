@@ -7,6 +7,7 @@
   - [Lesson g3: Check the text on the page using an alias access](https://cypress.tips/courses/cypress-plugins/lessons/g3)
   - [Lesson g4: Use resolved aliases to make API requests](https://cypress.tips/courses/cypress-plugins/lessons/g4)
   - [Lesson g5: Reuse the alias shortcut created in before hook](https://cypress.tips/courses/cypress-plugins/lessons/g5)
+  - [Lesson g6: Get all aliases](https://cypress.tips/courses/cypress-plugins/lessons/g6)
 
 ## Install
 
