@@ -44,6 +44,7 @@ import 'cypress-aliases/commands/wrap'
 import 'cypress-aliases/commands/request'
 import 'cypress-aliases/commands/as'
 import 'cypress-aliases/commands/type'
+import 'cypress-aliases/commands/all'
 ```
 
 ## API
@@ -139,6 +140,17 @@ it('has the item alias', () => {
 it('still has the item alias', () => {
   cy.get('@id')
 })
+```
+
+### getAllAliases
+
+Yields all current aliases
+
+```js
+cy.wrap(1).as('one')
+cy.wrap(2).as('two')
+cy.wrap(3).as('three')
+cy.getAllAliases().should('deep.equal', { one: 1, two: 2, three: 3 })
 ```
 
 ## Small print
