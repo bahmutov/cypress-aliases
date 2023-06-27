@@ -13,5 +13,15 @@ declare namespace Cypress {
   }
   interface Chainable {
     as(aliasName: string, options?: AsOptions): Chainable<any>
+
+    /**
+     * A query that yields an object with all known aliases
+     * and their current values.
+     * @example
+     *  cy.wrap(1).as('one')
+     *  cy.getAllAliases().should('deep.equal', { one: 1 })
+     * @see https://github.com/bahmutov/cypress-aliases
+     */
+    getAllAliases(): Chainable<object>
   }
 }
