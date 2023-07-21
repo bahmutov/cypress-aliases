@@ -1,0 +1,40 @@
+<body>
+  <h2>Fruits</h2>
+  <ul id="fruits"></ul>
+  <h2>Ordered</h2>
+  <ol id="ordered"></ol>
+  <script>
+    const fruits$ = document.getElementById('fruits')
+    const ordered$ = document.getElementById('ordered')
+    setTimeout(() => {
+      fruits$.innerHTML += `
+        <li>Kiwi</li>
+      `
+    }, 0)
+    setTimeout(() => {
+      fruits$.innerHTML += `
+        <li>Grapes</li>
+      `
+    }, 1000)
+    setTimeout(() => {
+      fruits$.innerHTML += `
+        <li>Pears</li>
+      `
+    }, 2000)
+    setTimeout(() => {
+      ordered$.innerHTML += `
+        <li>Grapes</li>
+      `
+    }, 0)
+    setTimeout(() => {
+      ordered$.innerHTML += `
+        <li>Pears</li>
+      `
+    }, 1000)
+    setTimeout(() => {
+      ordered$.innerHTML += `
+        <li>Kiwi</li>
+      `
+    }, 2000)
+  </script>
+</body>
